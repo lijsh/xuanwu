@@ -52,6 +52,10 @@ func (o *$obj.name.value) ReadForm(params map[string]string) (hasError bool) {
 	#else
 	Change go.tmpl go support $field.type now!
 	#end if
+	#if $field.type == "bool"
+	} else {
+		o.$field.name.value = false
+	#end if
 	}
 #end if
 #end for
